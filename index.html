@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Sarah Mitchell and Connor Hall">
+        <meta name="description" content="My new cool project">
+        <meta name="keywords" content="web development, html, css, javascript, winnipeg, canada">
+        <title>Fakebook</title>
+        <link rel="icon" href="./assets/img/icon.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+        <link rel="stylesheet" href="./assets/css/main.css" media="all" >
+        <script src="assets/js/app.js" defer></script>
+    </head>
+    <body>
+      <header>
+        <h1>Fakebook</h1>
+        <nav>
+            <a href="#">Friends</a>
+            <a href="#">Pages</a>
+            <a href="#">Groups</a>
+            <a href="#">My ads</a>
+            <a href="#">Settings</a>
+        </nav>
+        <div class="profile-pic"></div>
+      </header>
+      <!--Followed W3 schools, how to make a modal-->
+      <div class="modal user-account-modal">
+        <div class="modal-content">
+          <button class="close-button" aria-label="Close Modal">×</button>
+          <h3 class="modal-title">User Account Info</h3>
+          <div class="user-info">
+            <div class="user-info-row">
+              <div class="user-info-label"><strong>ID:</strong></div>
+              <span class="user-info-value user-id"></span>
+            </div>
+            <div class="user-info-row">
+              <div class="user-info-label"><strong>Name:</strong></div> 
+              <span class="user-info-value user-name-display"></span> 
+            </div>
+            <div class="user-info-row">
+              <div class="user-info-label"><strong>Username:</strong></div> 
+              <span class="user-info-value user-username"></span>   
+            </div>
+            <div class="user-info-row">
+              <div class="user-info-label"><strong>Email:</strong></div> 
+              <span class="user-info-value user-email"></span>    
+            </div>
+          </div>
+        </div>
+      </div>
+      <main>
+        <div class="container">
+        <section class="new-post">
+          < <form>
+            <textarea placeholder="What's new, Tom Nook?" required></textarea>
+            <div class="post-options">
+                <label class="file-input-label" for="imageUpload">
+                    <i class="fas fa-image"></i>
+                </label>
+                <input type="file" class="get-image" accept="image/*" id="imageUpload">
+                <button type="button" class="show-image">Post</button>
+            </div>
+        </form>
+        </section>
+        <section class="post">
+          <div class="post-header">
+              <div class="post-author-info">
+                  <div class="post-author-pic profile-pic"></div> 
+                  <div class="post-author-name">Tom Nook</div>
+              </div>
+              <div class="post-date">March 14, 2025</div>
+          </div>
+          <div class="content">
+              Me and the boys on our last vacation 
+          </div>
+          <div class="display-image">
+              <img src="./assets/img/example-post-image.png">
+          </div>
+      </section>
+      </div>
+    </main>
+  </body>
+</html>

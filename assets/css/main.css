@@ -1,0 +1,243 @@
+@charset "utf-8";
+
+body {
+    background-color: #18191A;
+    color: #fff;
+}
+
+.container {
+    width: min(100% - 40px, 1080px);
+    margin-inline: auto;
+    margin-top: 70px;
+    text-align: center;
+}
+/* - - - - - - - - - - - - - - - - - */
+/* - - - - - - Header - - - - - - - -*/
+/* - - - - - - - - - - - - - - - - - */
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #242526;
+}
+
+header h1 {
+    color: #3498db;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+
+    &:hover { 
+        color: #3498db;
+    }
+}
+
+header .profile-pic {
+    background-image: url('../img/header-profile.jpg'); 
+    width: 40px;
+    height: 40px
+}
+
+
+/* - - - - - - - - - - - - - - - - - */
+/* - - - - - - Modal - - - - - - - - -*/
+/* - - - - - - - - - - - - - - - - - */
+
+.modal.user-account-modal { 
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #242526;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    background: none; 
+    border: none;     
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-title { 
+    color: white;
+    margin-bottom: 15px;
+}
+
+.user-info {
+    color: white;
+}
+
+.user-info-row { 
+    display: flex;
+    margin-bottom: 8px;
+    align-items: baseline; 
+}
+
+.user-info-label { 
+    font-weight: bold;
+    margin-right: 5px;
+    flex-basis: 80px; 
+    text-align: right; 
+}
+
+/* - - - - - - - - - - - - - - - - - */
+/* - - - - - - Form - - - - - - - - -*/
+/* - - - - - - - - - - - - - - - - - */
+
+form { 
+    background-color: #242526;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+
+    textarea { 
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #3A3B3C;
+        color: #fff;
+        resize: none;
+
+        &::placeholder { 
+            color: #B0B3B8;
+        }
+    }
+
+    .post-options { 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        
+        label { 
+                color: #fff;
+                cursor: pointer;
+                font-size: 20px;
+        }
+        
+        input[type="file"] { 
+            display: none;
+        }
+
+        button { 
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+/* - - - - - - - - - - - - - - - - - */
+/* - - - - - - Post - - - - - - - - -*/
+/* - - - - - - - - - - - - - - - - - */
+
+.post {
+    background-color: #242526; 
+    border-radius: 8px;
+    margin-top: 20px; 
+    padding: 15px;
+    text-align: left; 
+}
+
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-image: url('../img/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-left: 15px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.post-author-pic {
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%;
+    background-image: url('../img/profile.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.post-author-name {
+    font-weight: 700;
+}
+
+.post-date {
+    font-size: 0.85em;
+    color: #B0B3B8;
+}
+
+.content {
+    margin-bottom: 10px;
+    line-height: 1.4; 
+}
+
+.display-image {
+    border-radius: 8px;
+    overflow: hidden; 
+    max-width: 100%;
+
+    img {
+        display: block; 
+        width: 100%; 
+        height: auto; 
+    }
+}
