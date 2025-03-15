@@ -119,7 +119,7 @@ function newPost(textContent, imageSrc) {
               ? `<div class="display-image"><img src="${imageSrc}"></div>`
               : ''
           }
-    `; // the above comes from chatGPT
+    `; // the above line comes from chatGPT
     const container = document.querySelector('.container');
     container.insertBefore(postSection, container.querySelector('.post'));
 }
@@ -127,7 +127,6 @@ function newPost(textContent, imageSrc) {
 getImage.addEventListener('change', function () {
     postImage();
 
-    //the following was from chatGPT, how to display file information
     const fileNameDisplay = document.querySelector('.file-name-display');
     if (getImage.files.length > 0) {
         fileNameDisplay.textContent = getImage.files[0].name;
