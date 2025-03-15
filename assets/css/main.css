@@ -106,19 +106,26 @@ nav {
 
 .user-info {
     color: white;
+    width: 100%;
 }
 
-.user-info-row { 
+.user-info-row {
     display: flex;
     margin-bottom: 8px;
-    align-items: baseline; 
+    align-items: baseline;
+    width: 100%; 
 }
 
-.user-info-label { 
+.user-info-label {
     font-weight: bold;
     margin-right: 5px;
-    flex-basis: 80px; 
-    text-align: right; 
+    flex-shrink: 0; 
+    min-width: 10px;
+    text-align: left;
+}
+.user-info-value {
+    text-align: left;
+    flex-grow: 1;
 }
 
 /* - - - - - - - - - - - - - - - - - */

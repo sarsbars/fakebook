@@ -63,16 +63,19 @@ class Subscriber extends User {
         return {...super.getInfo(), pages: this.#pages, groups: this.#groups };
         }
 }
-const currentUser = new User("Tom Nook", "givemebells", "TNook@acnh.com");
 
-const currentSubscriber = new Subscriber(
-    "Isabelle",
-    "mayormayor",
-    "isabelle@acnh.com",
+const currentSubscriber = new User("Isabelle", "mayormayor", "isabelle@acnh.com");
+
+const currentUser = new Subscriber(
+    "Tom Nook",
+    "givemebells",
+    "TNook@acnh.com",
     ["Animal Crossing Official", "Town Hall Updates"],
     ["Town Residents Group", "Gardening Enthusiasts"],
     true
 );
+
+
 
 function getDate() {
     const dateDisplay = { month: 'long', day: 'numeric', year: 'numeric' };
@@ -82,6 +85,7 @@ function getDate() {
 let postImageSrc = null; 
 
 function postImage() { 
+    //googled how to use FileReader()
     if (getImage.files.length > 0) {
         const image = getImage.files[0];
         const reader = new FileReader();
@@ -111,9 +115,13 @@ function newPost(textContent, imageSrc) {
         </div>
         <div class="content">
             ${textContent}
-        </div>
-        ${imageSrc !== null ? `<div class="display-image"><img src="${imageSrc}"></div>` : ''}
-    `;
+        </div> 
+        ${
+            typeof imageSrc === 'string'
+              ? `<div class="display-image"><img src="${imageSrc}"></div>`
+              : ''
+          }
+    `; // the above comes from chatGPT
     const container = document.querySelector('.container');
     container.insertBefore(postSection, container.querySelector('.post'));
 }
