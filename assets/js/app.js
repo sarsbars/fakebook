@@ -64,9 +64,9 @@ class Subscriber extends User {
         }
 }
 
-const currentSubscriber = new User("Isabelle", "mayormayor", "isabelle@acnh.com");
+const currentUser = new User("Isabelle", "mayormayor", "isabelle@acnh.com");
 
-const currentUser = new Subscriber(
+const currentSubscriber = new Subscriber(
     "Tom Nook",
     "givemebells",
     "TNook@acnh.com",
@@ -74,8 +74,6 @@ const currentUser = new Subscriber(
     ["Town Residents Group", "Gardening Enthusiasts"],
     true
 );
-
-
 
 function getDate() {
     const dateDisplay = { month: 'long', day: 'numeric', year: 'numeric' };
