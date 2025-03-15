@@ -14,4 +14,4 @@ user profile information.
 
 Here's an example of what the application looks like.
 
-![Example Screenshot](example.png)
+![Example Screenshot](./assets/img/example.png)
