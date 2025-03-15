@@ -1,9 +1,17 @@
-## Fake Book
+# Fakebook Project
 
-This is the fourth assignment for Object Oriented Javascript, a very basic social media clone. 
+This is the fourth assignment for Object Oriented Javascript, a simple social 
+media clone. It allows users to create posts with text and images, and view 
+user profile information.
 
 
-Below is a screenshot of how it is aligned on my browser.
+## Project Contributors
 
-![Alignment](./assets/img/fakebook-alignment.png)
+* Sarah Mitchell (HTML, CSS, Project Compilation)
+* Connor Hall (JavaScript)
 
+## Example
+
+Here's an example of what the application looks like.
+
+![Example Screenshot](example.jpg)

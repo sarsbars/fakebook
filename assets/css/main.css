@@ -22,10 +22,14 @@ header {
     align-items: center;
     padding: 15px 30px;
     background-color: #242526;
-}
-
-header h1 {
-    color: #3498db;
+     
+    h1 {
+        color: #3498db;
+    }
+    .profile-pic {
+        width: 50px;
+        height: 50px
+    }
 }
 
 nav {
@@ -33,22 +37,16 @@ nav {
     gap: 15px;
     margin-left: auto;
     margin-right: auto;
-}
-
-nav a {
+    
+    a {
     color: #fff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1.8rem;
 
-    &:hover { 
-        color: #3498db;
+        &:hover { 
+            color: #3498db;
+        }
     }
-}
-
-header .profile-pic {
-    background-image: url('../img/header-profile.jpg'); 
-    width: 40px;
-    height: 40px
 }
 
 
@@ -83,7 +81,7 @@ header .profile-pic {
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 28px;
+    font-size: 3rem;
     font-weight: bold;
     padding: 10px;
     cursor: pointer;
@@ -135,6 +133,7 @@ form {
         padding: 10px;
         margin-bottom: 10px;
         border: none;
+        font-size: 1.6rem;
         border-radius: 5px;
         background-color: #3A3B3C;
         color: #fff;
@@ -167,9 +166,22 @@ form {
             border: none;
             padding: 10px 15px;
             border-radius: 5px;
+            font-size: 2rem;
             cursor: pointer;
         }
     }
+}
+
+.file-name-display {
+    margin-left: 5px;
+    font-size: 1.2rem; 
+    color: #B0B3B8; 
+}
+.post-error-message {
+    color: #3498db; 
+    font-size: 1rem; 
+    margin-top: 5px; 
+    text-align: left; 
 }
 
 /* - - - - - - - - - - - - - - - - - */
@@ -221,7 +233,7 @@ form {
 }
 
 .post-date {
-    font-size: 0.85em;
+    font-size: 1rem;
     color: #B0B3B8;
 }
 

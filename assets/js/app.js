@@ -1,8 +1,9 @@
 'use strict';
-const displayImageArea = document.querySelector('.display-image');
+const form = document.querySelector('form');
 const getImage = document.querySelector('.get-image');
 const contentTextarea = document.querySelector('textarea');
 const postButton = document.querySelector('.show-image');
+
 
 const profilePic = document.querySelector('.profile-pic');
 const modal = document.querySelector('.modal.user-account-modal');
@@ -11,7 +12,8 @@ const userIdValue = document.querySelector('.user-id');
 const userNameValue = document.querySelector('.user-name-display');
 const userUsernameValue = document.querySelector('.user-username');
 const userEmailValue = document.querySelector('.user-email');
-const displayImagePreview = document.querySelector('.image-preview');
+const displayImageArea = document.querySelector('.display-image');
+
 
 class User {
     #id;
@@ -56,7 +58,7 @@ class Subscriber extends User {
     get pages() { return this.#pages; }
     get groups() { return this.#groups; }
     get canMonetize() { return this.#canMonetize; }
-
+ // Asked ChatGPT how to use the spread operator to combine class + super info
     getInfo() {
         return {...super.getInfo(), pages: this.#pages, groups: this.#groups };
         }
@@ -116,24 +118,32 @@ function newPost(textContent, imageSrc) {
     container.insertBefore(postSection, container.querySelector('.post'));
 }
 
-getImage.addEventListener('change', function() {
-    postImage(); 
-});
+getImage.addEventListener('change', function () {
+    postImage();
 
-
-postButton.addEventListener('click', () => { 
-    const textContent = contentTextarea.value;
-
-    if (textContent.trim() !== "" || getImage.files.length > 0) {
-        newPost(textContent, postImageSrc);
-        contentTextarea.value = '';
-        getImage.value = '';
-        displayImagePreview.innerHTML = '';
-        postImageSrc = null; 
-        console.log('Post cannot be empty.');
+    //the following was from chatGPT, how to display file information
+    const fileNameDisplay = document.querySelector('.file-name-display');
+    if (getImage.files.length > 0) {
+        fileNameDisplay.textContent = getImage.files[0].name;
+    } else {
+        fileNameDisplay.textContent = '';
     }
 });
 
+postButton.addEventListener('click', () => {
+    const textContent = contentTextarea.value;
+    const errorMessage = document.querySelector('.post-error-message');
+//Asked chatGPT how to validate a form
+    if (textContent.trim() !== "" || getImage.files.length > 0) {
+        newPost(textContent, postImageSrc);
+        form.reset();
+        postImageSrc = null;
+        errorMessage.textContent = '';
+        document.querySelector('.file-name-display').textContent = ''; 
+    } else {
+        errorMessage.textContent = 'Post cannot be empty.';
+    }
+});
 
 profilePic.addEventListener('click', () => {
     const userInfo = currentSubscriber.getInfo();
